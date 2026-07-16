@@ -1,0 +1,541 @@
+:root {
+    --primary-red: #E31E24;
+    --bg-light: #ffffff;
+    --text-dark: #1A1A1A;
+    --text-grey: #666;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body { background: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
+
+/* Navbar */
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;   /* hero ke upar float karega */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 5%;
+    background: transparent;
+}
+.menu-toggle {
+  display: none;  /* 🔥 desktop pe hide */
+  font-size: 24px;
+  cursor: pointer;
+}
+.navbar {
+    width: 60%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    height: 80px;
+}
+
+.logo img { height: 40px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.partner-link{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;              /* 🔥 kam gap */
+  line-height:1;        /* 🔥 extra height hatao */
+}
+
+.new-img{
+  width:16px;
+  height:auto;
+  margin-bottom:-4px;
+  margin-top: 0%;   /* 🔥 space compress karega */
+}
+
+.btn-nav {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn-nav:hover {
+    background: #dc2626;
+}
+
+/* Hero Section */
+.hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 160px 20px 60px 20px;
+            gap: 40px;
+        }
+        .hero-text h1 { font-family: Inter;
+font-weight: 700;
+font-style: Bold;
+font-size: 56.99px;
+leading-trim: NONE;
+line-height: 68.39px;
+letter-spacing: -2%;
+ }
+        .hero-text h1 span { color: var(--primary-red); }
+        .hero-text p { font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 21.66px;
+leading-trim: NONE;
+line-height: 32.5px;
+letter-spacing: -2%;
+ }
+        .hero-btns { display: flex; gap: 15px; align-items: center; }
+        .btn-primary {width: 214.82723999023438;
+height: 66.32803344726562;
+angle: 0 deg;
+opacity: 1;
+gap: 10.83px;
+border-radius: 57.41px;
+padding-top: 21.66px;
+padding-right: 24.91px;
+padding-bottom: 21.66px;
+padding-left: 24.91px;
+background: var(--primary-red);
+color: white;
+ }
+        .btn-outline { width: 244.82723999023438;
+height: 66.32803344726562;
+angle: 0 deg;
+opacity: 1;
+gap: 10.83px;
+border-radius: 57.41px;
+padding-top: 21.66px;
+padding-right: 24.91px;
+padding-bottom: 21.66px;
+padding-left: 24.91px;
+border-width: 1px;
+border-color: var(--primary-red);
+border-style: solid;}
+
+        /* Image Mask from Figma */
+        .hero-visual { margin-top: 50px; position: relative; }
+        .image-bg-shape { 
+            width: 100%; height: 350px; border-radius: 40px; 
+            position: relative; overflow: hidden; display: flex; justify-content: center;
+        }
+        .image-bg-shape img { position: absolute; bottom: 0; width: 85%; }
+
+        /* --- CONTACT CARD (Right Side) --- */
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+        .contact-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 25px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .input-box { margin-bottom: 15px; }
+        .input-box label { display: block; font-size: 12px; font-weight: 600; color: #9CA3AF; margin-bottom: 5px; }
+        input, textarea { 
+            width: 100%; background: #F9FAFB; border: none; padding: 15px; 
+            border-radius: 12px; outline: none; font-size: 14px;
+        }
+        .btn-submit { width: 100%; background: #F87171; color: white; border: none; padding: 16px; border-radius: 15px; font-weight: 700; margin-top: 10px; cursor: pointer; }
+
+
+
+/* Opportunity Section */
+.opportunity {
+    position: relative; padding: 100px 8%;
+}
+
+.opp-container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px;
+}
+.opp-card {
+    background: linear-gradient(135deg, #E31E24 0%, #ff4d4d 100%);
+    color: white; padding: 50px; border-radius: 30px;
+}
+.opp-card { 
+            width: 845;
+height: 942;
+top: 789px;
+left: 76px;
+opacity: 1;
+border-top-left-radius: 32px;
+border-top-right-radius: 32px;
+background: linear-gradient(178.86deg, #E9363A 78.57%, #FFFFFF 99%);
+}
+.features-list { list-style: none; margin-top: 30px; }
+.features-list li { margin-bottom: 20px; position: relative; padding-left: 25px; }
+.features-list li::before { content: "✦"; position: absolute; left: 0; color: #fff; }
+
+.business-help-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-heading {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Cards ke beech ka vertical gap */
+    flex: 1;
+}
+
+/* Feature Card Styling */
+.feature-card {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Feature Card Icon Wrapper */
+.feature-card .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 24px;
+}
+
+/* Naya Star Styling */
+.feature-card .icon::before,
+.feature-card .icon::after {
+    content: "✦";
+    color: #ff4d4d;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Pehle star ko thoda upar move karne ke liye (Diagonal effect) */
+.feature-card .icon::before {
+    transform: translateY(-5px); 
+}
+
+/* Dusre star ko thoda niche move karne ke liye */
+.feature-card .icon::after {
+    transform: translateY(3px);
+}
+
+.feature-card p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+    line-height: 1.4;
+}
+
+.mobile-display {
+    position: relative;
+    width: 320px; /* Container ki width */
+    height: 500px; /* Container ki height */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(236, 67, 67), rgb(249, 248, 248));
+    border-radius: 20px;
+    height: 200px;
+}
+
+.phone {
+    position: absolute;
+    width: 250px; /* Phone ki width adjust karein */
+    border-radius: 24px;
+    
+    transition: all 0.3s ease;
+}
+
+/* Upar wala White Phone (Left side) */
+.phone-1 {
+    z-index: 2;
+    transform: translateX(-40px); /* Ise left shift kiya */
+}
+
+/* Piche wala Red Phone (Right/Center side) */
+.phone-2{
+    z-index: 1;
+    transform: translateX(40px) translateY(30px); /* Ise right aur thoda niche kiya */
+    /* Agar image ko thoda rotate karna ho toh: rotate(5deg) bhi add kar sakte hain */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .mobile-display {
+        width: 100%;
+        height: 400px;
+    }
+    .phone {
+        width: 180px;
+    }
+    .phone-front {
+        transform: translateX(-45px);
+    }
+    .phone-back {
+        transform: translateX(45px) translateY(20px);
+    }
+}
+.partner-section {
+  padding: 100px 0;
+  text-align: center;
+  background: #fff;
+}
+
+.partner-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #6B7280;
+  max-width: 600px;
+  margin: 15px auto 80px;
+  font-size: 14px;
+}
+
+/* Hub Layout */
+.hub-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 300px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.left .item { justify-content: flex-end; }
+.right .item { justify-content: flex-start; }
+
+/* Offsetting for that circular curved feel */
+.offset-in { transform: translateX(40px); }
+.offset-out { transform: translateX(-40px); }
+
+/* Icon Boxes - Exact Figma Style */
+.icon-sq {
+  width: 55px;
+  height: 55px;
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.icon-sq img { width: 28px; height: 28px; }
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Central Red Box */
+.center {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red-box-logo {
+  width: 110px;
+  height: 110px;
+  background: var(--red-primary);
+  border-radius: 28px;
+  transform: rotate(15deg); /* Important Figma Detail */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 15px 40px rgba(255, 59, 48, 0.3);
+}
+
+.white-inner {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  color: var(--red-primary);
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Connection Lines */
+.connections {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dark-footer-wrapper {
+    background-color: #0d1117; /* Dark navy-blue background like image */
+    color: #ffffff;
+    padding-top: 1px; /* To prevent margin collapsing */
+}
+
+/* Centered content container with controlled width */
+.footer-inner-container {
+    max-width: 1200px; /* Adjust this value to make the whole section less spread */
+    margin: 0 auto;
+    position: relative; /* Essential for floating the card */
+    padding: 0 4%; /* Some side padding for mobile */
+}
+.main-footer { padding: 40px 0 20px 0; margin-top: -30px; /* Offset for card's transform */ }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 { margin-bottom: 20px; font-size: 17px; color: #fff; font-weight: 600; }
+.footer-col p, .footer-col li { font-size: 14px; color: #aaa; margin-bottom: 11px; line-height: 1.6; }
+.footer-col ul { list-style: none; }
+.footer-col a { color: #aaa; text-decoration: none; transition: 0.3s; }
+.footer-col a:hover { color: #ef4444; }
+
+/* Icons & Logo */
+.footer-logo { height: 42px; margin-bottom: 18px; }
+.mii-logo { height: 48px; margin-top: 18px; filter: brightness(0) invert(1); }
+
+.social-icons { display: flex; gap: 12px; margin: 18px 0; }
+.social-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #222; color: white;
+    font-size: 12px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    font-size: 13px;
+    color: #666;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.bottom-links a, .legal-links a { margin: 0 8px; color: #666; text-decoration: none; }
+.bottom-links a:hover, .legal-links a:hover { color: #aaa; }
+.partner-cta-card {
+    background: #ffffff;
+    color: #000;
+    width: 80%; /* Card width within the container */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%); /* Half out of the footer */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Soft shadow */
+    position: relative;
+    z-index: 10;
+}
+
+.partner-cta-text h2 { font-size: 26px; font-weight: 700; margin-bottom: 5px; }
+.partner-cta-text p { color: #666; font-size: 14px; line-height: 1.5; }
+
+.partner-cta-form { display: flex; gap: 10px; flex: 1; justify-content: flex-end; }
+.partner-cta-form input {
+    padding: 14px 20px;
+    border-radius: 50px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    width: 240px;
+    font-size: 14px;
+}
+
+.btn-connect {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-connect:hover {
+    background: #dc2626;
+}
+        

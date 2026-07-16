@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeepConnect | Sales Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #E31E24;
+            --soft-red: #FEE2E2;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B7280;
+            --bg-light: #FAFAFA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg-light); color: var(--text-dark); }
+
+        /* --- NAVIGATION (Floating Pill Style) --- */
+        .nav-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 25px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+        .navbar {
+            background: white;
+            width: 90%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            border-radius: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 14px; }
+        .nav-links .active-link { color: var(--primary-red); font-weight: 700; position: relative; }
+        .new-badge { 
+            position: absolute; top: -18px; right: -15px; 
+            background: var(--soft-red); color: var(--primary-red); 
+            font-size: 10px; padding: 2px 6px; border-radius: 4px;
+        }
+        .btn-nav { background: var(--primary-red); color: white; border: none; padding: 12px 25px; border-radius: 50px; font-weight: 700; cursor: pointer; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 160px 20px 60px 20px;
+            gap: 40px;
+        }
+        .hero-text h1 { font-family: Inter;
+font-weight: 700;
+font-style: Bold;
+font-size: 56.99px;
+leading-trim: NONE;
+line-height: 68.39px;
+letter-spacing: -2%;
+ }
+        .hero-text h1 span { color: var(--primary-red); }
+        .hero-text p { font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 21.66px;
+leading-trim: NONE;
+line-height: 32.5px;
+letter-spacing: -2%;
+ }
+        .hero-btns { display: flex; gap: 15px; align-items: center; }
+        .btn-primary {width: 214.82723999023438;
+height: 66.32803344726562;
+angle: 0 deg;
+opacity: 1;
+gap: 10.83px;
+border-radius: 57.41px;
+padding-top: 21.66px;
+padding-right: 24.91px;
+padding-bottom: 21.66px;
+padding-left: 24.91px;
+background: var(--primary-red);
+color: white;
+ }
+        .btn-outline { width: 244.82723999023438;
+height: 66.32803344726562;
+angle: 0 deg;
+opacity: 1;
+gap: 10.83px;
+border-radius: 57.41px;
+padding-top: 21.66px;
+padding-right: 24.91px;
+padding-bottom: 21.66px;
+padding-left: 24.91px;
+border-width: 1px;
+border-color: var(--primary-red);
+border-style: solid;}
+
+        /* Image Mask from Figma */
+        .hero-visual { margin-top: 50px; position: relative; }
+        .image-bg-shape { 
+            width: 100%; height: 350px; border-radius: 40px; 
+            position: relative; overflow: hidden; display: flex; justify-content: center;
+        }
+        .image-bg-shape img { position: absolute; bottom: 0; width: 85%; }
+
+        /* --- CONTACT CARD (Right Side) --- */
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+        .contact-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 25px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .input-box { margin-bottom: 15px; }
+        .input-box label { display: block; font-size: 12px; font-weight: 600; color: #9CA3AF; margin-bottom: 5px; }
+        input, textarea { 
+            width: 100%; background: #F9FAFB; border: none; padding: 15px; 
+            border-radius: 12px; outline: none; font-size: 14px;
+        }
+        .btn-submit { width: 100%; background: #F87171; color: white; border: none; padding: 16px; border-radius: 15px; font-weight: 700; margin-top: 10px; cursor: pointer; }
+
+        /* --- OPPORTUNITY SECTION (The Red Box) --- */
+        .opp-section { max-width: 1200px; margin: -50px auto 100px; padding: 0 20px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; }
+        .red-box { 
+            width: 845;
+height: 942;
+top: 789px;
+left: 76px;
+angle: 0 deg;
+opacity: 1;
+border-top-left-radius: 32px;
+border-top-right-radius: 32px;
+background: linear-gradient(178.86deg, #E9363A 78.57%, #FFFFFF 99%);
+;
+        }
+        .red-box h2 { font-size: 42px; font-weight: 800; margin-bottom: 15px; }
+        
+        .info-cards { display: flex; flex-direction: column; gap: 20px; }
+        .info-item { 
+            background: white; padding: 25px; border-radius: 20px; 
+            display: flex; align-items: center; gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .info-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        /* --- UPDATED OPPORTUNITY SECTION --- */
+.opp-container {
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+/* Figma's Red Curved Background (Ellipse 108/109) */
+.red-background-curve {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%; /* Curved effect ke liye wide width */
+    height: 850px;
+    background: linear-gradient(180deg, #E31E24 0%, #B0171B 100%);
+    border-radius: 0 0 50% 50%; /* Ye niche se curve banata hai */
+    z-index: -1;
+}
+
+.opp-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    text-align: center;
+    color: white;
+}
+
+.opp-content h2 { font-size: 48px; font-weight: 800; margin-bottom: 10px; }
+.opp-content p { opacity: 0.9; font-size: 18px; margin-bottom: 60px; }
+
+/* 3-Column Layout: Left Features | Mobile | Right Features */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.feature-col { display: flex; flex-direction: column; gap: 40px; }
+
+/* White Floating Cards */
+.glass-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: left;
+    color: var(--text-dark);
+}
+
+.glass-card .icon { font-size: 24px; }
+.glass-card h4 { font-weight: 700; font-size: 16px; }
+.glass-card p { font-size: 13px; color: var(--text-gray); margin-bottom: 0; }
+
+/* Center Mobile Mockup */
+.mobile-mockup { position: relative; display: flex; justify-content: center; }
+.mobile-mockup img { 
+    width: 320px; 
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.3)); 
+}
+
+
+    .opportunity-container {
+        padding: 60px 20px;
+        display: flex;
+        justify-content: center;
+        background-color: #FAFAFA;
+    }
+
+    .opportunity-card {
+        /* Figma Layout Specs */
+        width: 100%;
+        max-width: 845px;
+        min-height: 942px;
+        background: var(--figma-red-gradient);
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        padding: 60px 50px;
+        color: var(--text-white);
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .opp-title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .opp-subtitle {
+        font-size: 18px;
+        font-weight: 400;
+        opacity: 0.9;
+        margin-bottom: 40px;
+    }
+
+    .opp-description {
+        background: rgba(255, 255, 255, 0.1); /* Subtle contrast */
+        padding: 25px;
+        border-radius: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
+    .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .feature-point {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .bullet {
+        font-size: 20px;
+        color: #FFFFFF;
+    }
+
+    .feature-point p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .feature-point strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    /* Responsive for Tablets/Phones */
+    @media (max-width: 768px) {
+        .opportunity-card {
+            padding: 40px 20px;
+            min-height: auto;
+        }
+        .opp-title {
+            font-size: 32px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <header class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo"><img src="image/keep.png" alt="KeepConnect" height="35"></div>
+            <ul class="nav-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#" class="active-link">Become a Partner <span class="new-badge">NEW</span></a></li>
+            </ul>
+            <button class="btn-nav">Get Started</button>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Build a High-Income Digital Business with <span>KeepConnect</span></h1>
+            <p>Earn by helping local businesses grow using a powerful all-in-one platform.</p>
+            <div class="hero-btns">
+                <button class="btn-primary">Apply as Partner</button>
+                <button class="btn-outline">Start Earning Today</button>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="image-bg-shape">
+                    <img src="image/girl.png" alt="Partner Character">
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h3>Send A Message</h3>
+            <form>
+                <div class="form-row">
+                    <div class="input-box"><label>Full Name</label><input type="text" placeholder="Billu dilwala"></div>
+                    <div class="input-box"><label>Business Name</label><input type="text" placeholder="Billu chai shop"></div>
+                </div>
+                <div class="form-row">
+                    <div class="input-box"><label>Number</label><input type="text" placeholder="+91 87656 76767"></div>
+                    <div class="input-box"><label>Email</label><input type="email" placeholder="Email address"></div>
+                </div>
+                <div class="input-box"><label>Message</label><textarea rows="4" placeholder="Write here"></textarea></div>
+                <button class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <section class="opp-section">
+        <div class="red-box">
+            <h2>What Is This Opportunity?</h2>
+            <p>The more businesses you help, the more you grow.</p>
+        </div>
+        <div class="info-cards">
+            <div class="info-item">
+                <div class="info-icon" style="background: #FFF4ED; color: #F97316;">📍</div>
+                <div><strong>Office Address</strong><p style="font-size: 14px; color: var(--text-gray);">3rd Floor, Anjaney Apartment, Nagpur(MH) 440024.</p></div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon" style="background: #F0FDF4; color: #22C55E;">📞</div>
+                <div><strong>Call / WhatsApp</strong><p style="font-size: 14px; color: var(--text-gray);">+91-7057080970</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="opportunity-container">
+    <div class="opportunity-card">
+        <div class="opp-content">
+            <h2 class="opp-title">What Is This Opportunity?</h2>
+            <p class="opp-subtitle">The more businesses you help, the more you grow.</p>
+            
+            <div class="opp-description">
+                <p>KeepConnect Partner Program is designed for individuals, agencies, and businesses who want to earn by helping local businesses go digital. As a partner, you don't just sell a product you provide a complete growth solution that businesses genuinely need.</p>
+            </div>
+
+            <div class="feature-list">
+                <div class="feature-point">
+                    <span class="bullet">✦</span>
+                    <p><strong>Earn per client you onboard:</strong> Receive direct commissions for every client you successfully set up on the platform.</p>
+                </div>
+                <div class="feature-point">
+                    <span class="bullet">✦</span>
+                    <p><strong>Partner-based earning model:</strong> Scale your income as you build a team or by helping local businesses grow.</p>
+                </div>
+                <div class="feature-point">
+                    <span class="bullet">✦</span>
+                    <p><strong>Complete solution offering:</strong> Access our full suite of tools to provide high-growth solutions for your clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

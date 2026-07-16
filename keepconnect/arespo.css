@@ -1,0 +1,90 @@
+/* ============================================================
+   ABOUT PAGE RESPONSIVE - FIGMA ACCURATE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* --- Navbar & Menu --- */
+ 
+
+    /* Menu Toggle Button (Hamburger) */
+    .menu-toggle {
+        display: block !important;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 2001;
+    }
+
+    /* --- Hero Section (Centered) --- */
+    .hero {
+        padding: 120px 20px 60px !important;
+        text-align: center !important;
+    }
+    .hero h1 { font-size: 28px !important; }
+
+    /* --- Features Track (Common instruction: Centered) --- */
+    .features-track {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px;
+        max-width: 100%;
+    }
+    .feature-card {
+        min-width: 260px;
+        text-align: center !important;
+    }
+
+    /* --- About Grid (Mission/Vision) --- */
+    /* Figma 5th Column: Image comes before text in mobile */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    .about-box {
+        text-align: center !important;
+        padding: 20px;
+        order: 2; /* Text niche */
+    }
+    .about-grid img {
+        max-width: 80%;
+        margin: 0 auto;
+        order: 1; /* Image upar */
+    }
+
+    /* --- Red Section (Desktop Style as requested) --- */
+    .new-red-section {
+        max-width: 95% !important;
+        padding: 40px 10px !important;
+    }
+    .new-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 column grid like desktop scaling */
+        gap: 10px !important;
+    }
+    .new-card {
+        width: 100% !important;
+        min-height: 140px !important;
+        padding: 15px !important;
+        text-align: left !important; /* Internal content left */
+    }
+    .new-h3 { font-size: 0.85rem !important; }
+
+    /* --- Partner Card & Footer --- */
+    .partner-cta-card {
+        flex-direction: column !important;
+        width: 90% !important;
+        transform: translateY(-40%) !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+    }
+    .partner-cta-form {
+        flex-direction: column !important;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .partner-cta-form input { width: 100%; margin-bottom: 10px; }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+}

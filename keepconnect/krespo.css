@@ -1,0 +1,336 @@
+/* ============================================================
+   CLEAN & ACCURATE RESPONSIVE CSS (FIGMA BASED)
+   ============================================================ */
+
+@media (max-width: 760px) {
+    /* --- GLOBAL SETTINGS --- */
+    section { padding: 40px 5%; text-align: center; }
+    .section-title { font-size: 28px; margin-bottom: 30px; line-height: 1.2; }
+
+    /* --- NAVBAR FIX --- */
+    .header-container { padding: 15px 5%; position: fixed; }
+    .navbar { 
+        width: 100%; 
+        height: 65px; 
+        border-radius: 50px; 
+        padding: 0 20px; 
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .menu-toggle { display: block !important; font-size: 26px; }
+    /* .nav-links {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+        background: #fff; flex-direction: column; padding-top: 100px;
+        transform: translateX(100%); transition: 0.4s ease;
+    }
+    .nav-links.active { transform: translateX(0); } */
+    .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 70%;
+    height: 100vh;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px;
+
+    transform: translateX(100%);
+    transition: 0.4s ease;
+
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.nav-links.active {
+    transform: translateX(0);
+}
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.menu-toggle{
+  z-index: 1001;
+}
+    .btn-nav { display: none; }
+
+    /* --- HERO SECTION --- */
+    .hero { padding-top: 120px; flex-direction: column !important; overflow: hidden; }
+    .hero-content { order: 1; min-width: 100%; }
+    .hero-content h1 { font-size: 32px !important; margin: 15px 0; }
+    .hero-content p { font-size: 16px; margin-bottom: 25px; margin-inline: auto; }
+    .hero-btns { flex-direction: column; gap: 20px; align-items: center; }
+    .user-avatars { justify-content: center; margin-top: 15px; }
+
+    .hero-image { order: 2; width: 100%; margin-top: 30px; overflow: hidden; }
+    #hero-img { max-width: 280px !important; }
+    #hero-circle { width: 220px; height: 220px; }
+
+    /* Special Fix for Theme Pro Image on Mobile */
+    .hero.theme-pro #hero-img {
+        transform: scale(1) !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+    }
+
+    /* --- FEATURES GRID --- */
+    .features-grid { grid-template-columns: 1fr; gap: 20px; }
+    .feat-card { padding: 25px; align-items: center; text-align: center; }
+    .card-img { height: 160px; }
+
+    /* --- ORBIT SECTION (FIGMA SCALE) --- */
+    .platform-cta { padding: 60px 0; }
+    .orbit-container {
+        width: 300px !important; height: 300px !important;
+    }
+    .orbit-content h2 { font-size: 22px; }
+     .orbit-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     text-align:center;
+  max-width:350px;
+  z-index:2;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;   /* 🔥 THIS FIXES CENTER */
+  justify-content:center;
+  }
+
+  .orbit-content p {
+    margin-bottom: 12px; /* kam spacing mobile pe */
+  }
+  .orbit-circle::after{
+    display: none;
+  }
+  .orbit-content .btn-main{
+  padding: 12px 26px;   /* pehle 16 32 tha */
+  font-size:14px;
+}
+
+    .orbit-icon { width: 35px; height: 35px; padding: 5px; }
+    /* Mobile positions for icons */
+    .i1 { transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg); }
+    .i2 { transform: translate(-50%, -50%) rotate(60deg) translate(150px) rotate(-60deg); }
+    .i3 { transform: translate(-50%, -50%) rotate(120deg) translate(150px) rotate(-120deg); }
+    .i4 { transform: translate(-50%, -50%) rotate(180deg) translate(150px) rotate(-180deg); }
+    .i5 { transform: translate(-50%, -50%) rotate(240deg) translate(150px) rotate(-240deg); }
+    .i6 { transform: translate(-50%, -50%) rotate(300deg) translate(150px) rotate(-300deg); }
+
+    /* --- PRICING --- */
+    .pricing-grid { grid-template-columns: 1fr !important; }
+    .save-tag { margin-bottom: 20px; }
+
+
+
+  .platform-reach{
+    flex-direction: row !important;   /* 🔥 side-by-side */
+    align-items: center;
+    justify-content: space-between;
+ /* margin: 20px 12px; 
+    padding: 25px 18px !important; */
+    gap: 10px;
+    /* border-radius: 20px; */
+      margin: 20px 20px !important;
+   padding: 30px 20px 60px !important;
+  border-radius: 20px;
+  }
+
+  /* LEFT TEXT */
+  .reach-content{
+    flex: 1;
+    text-align: left !important; padding-right: 8px;
+  }
+
+  .reach-content h2{
+    font-size: 16px !important;
+    /* line-height: 1.3; */
+  }
+  .reach-content p{
+    font-size: 12px;
+  }
+  .reach-content .sub-text{
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  .stats-grid{
+    gap: 12px;
+   
+      margin-top: 20px;
+  z-index: 3;
+  position: relative;
+  }
+
+  .stat h3{
+    font-size: 16px;
+  }
+
+  .stat p{
+    font-size: 10px;
+  }
+
+
+ .reach-image{
+  flex: 1;
+  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   width: 180px;
+  height: 240px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/* Common image style */
+.reach-image img{
+  width: 120px !important;
+  height: stretch;
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* FRONT IMAGE */
+.reach-image img:first-child{
+ width: 140px;
+  bottom: -50px;
+ transform: translateX(-50px) translateY(80px);
+  z-index: 2;
+  
+}
+
+/* BACK IMAGE */
+.reach-image img:last-child{
+  width: 120px;
+  top: 0;
+
+  left: 55%;              /* 🔥 thoda right shift */
+  transform: translateX(-30%)translateY(120px) ;
+
+  z-index: 1;
+  opacity: 0.9;
+}
+
+
+    /* --- KEY BENEFITS --- */
+    .benefits-container { flex-direction: column; gap: 30px; }
+    .phone-display { order: -1; }
+    .phone-display img { max-width: 250px; margin: 0 auto; }
+    .benefit-card { text-align: center; padding: 15px; }
+
+    /* --- FOOTER --- */
+    .partner-cta-card {
+  width: 92% !important;
+  max-width: 420px;          /* mobile me control */
+  margin: 0 auto;
+  
+  padding: 25px 20px !important;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;    /* 🔥 vertical layout */
+  align-items: center;
+  text-align: center;
+
+  gap: 15px;
+}
+    .partner-cta-form { width: 100%; flex-direction: column; }
+    .partner-cta-form input { width: 100%; max-width: none; }
+    
+    .footer-grid { grid-template-columns: 1fr !important; text-align: left; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+.main-footer{
+  margin-top: -180px;   /* 🔥 value adjust karo */
+}
+}
+/* --- TABLET (Jab screen 1024px se choti ho) --- */
+
+
+
+@media (max-width: 360px){
+
+  .reach-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;   /* 🔥 MOST IMPORTANT (image bahar nahi jayegi) */
+  padding: 80px;      /* 🔥 thoda breathing space */
+   display: flex;
+  justify-content: flex-start;   /* 🔥 center se left */
+  padding-left: 5px;  
+}
+
+.reach-image img{
+
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+/* FRONT IMAGE */
+.reach-image img:first-child{
+  z-index: 2;
+  /* transform: translateX(10px) translateY(-5px);  */
+  transform: translateX(0px) translateY(50px);
+   /* 🔥 kam move */
+}
+
+/* BACK IMAGE */
+.reach-image img:last-child{
+  z-index: 1;
+  /* transform: translateX(-10px) translateY(10px); 🔥 balanced */
+  opacity: 0.9;
+   transform: translateX(-20px) translateY(60px);
+}
+}
+@media (max-width: 480px){
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .navbar{
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .hero{
+    padding: 120px 5% 40px;
+  }
+
+  .hero-image{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #hero-img{
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+

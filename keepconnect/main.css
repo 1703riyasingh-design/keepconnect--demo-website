@@ -1,0 +1,856 @@
+:root {
+    --primary-red: #E63946;
+    --text-dark: #1A1A1A;
+    --text-grey: #787878;
+    --bg-pink: #FFF0F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* NAVBAR - Floating Style */
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;   /* hero ke upar float karega */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 5%;
+    background: transparent;
+}
+.menu-toggle {
+  display: none;  /* 🔥 desktop pe hide */
+  font-size: 24px;
+  cursor: pointer;
+}
+.navbar {
+    width: 60%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    height: 80px;
+}
+
+.logo img { height: 40px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.partner-link{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;              /* 🔥 kam gap */
+  line-height:1;        /* 🔥 extra height hatao */
+}
+
+.new-img{
+  width:16px;
+  height:auto;
+  margin-bottom:-4px;
+  margin-top: 0%;   /* 🔥 space compress karega */
+}
+
+.btn-nav {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;   /* full screen */
+    padding: 120px 8% 60px;  
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.hero-content { flex: 1; min-width: 300px; }
+.hero-image{
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main hero image */
+#hero-img{
+    width:100%;
+    max-width:450px;
+    z-index:2;
+}
+
+/* circle image */
+#hero-circle{
+    position:absolute;
+    width:300px;
+    height:300px;
+    z-index:1;
+    display:none;
+}
+
+/* icons */
+.hero-icon{
+    position:absolute;
+    width:100px;
+    height:100px;
+    z-index:3;
+    display:none;
+   
+}
+
+
+.badge {
+    color: var(--primary-red);
+    background: var(--bg-pink);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin: 20px 0;
+    color: var(--text-dark);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-grey);
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.btn-main {
+    background: var(--primary-red);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-image { flex: 1; display: flex; justify-content: center; }
+.hero-image img { width: 100%; max-width: 450px; }
+
+/* FEATURES GRID */
+
+.features-grid {
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto; /* Ya jo aapke figma ka container size hai */
+    
+    /* 🔥 Yeh do lines gap ko balance karke center layengi */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    
+}
+
+.features {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Heading aur Grid dono ko horizontal center karega */
+    /* Padding dono side barabar rakhein */
+}
+.section-tag { color: var(--primary-red); font-weight: 600; margin-bottom: 10px; }
+.section-title { font-size: 36px; margin-bottom: 60px; }
+/* 2nd card image blur from bottom */
+/* .features-grid .feat-card:nth-child(2) .card-img img {
+  -webkit-mask-image: linear-gradient(to bottom, black 15%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 15%, transparent 100%);
+  width: 100%;
+} */
+
+/* .feat-card h3 { margin-bottom: 15px; font-size: 22px; }
+.feat-card p { color: var(--text-grey); margin-bottom: 30px; line-height: 1.6; } */
+
+/* 2nd card text ko niche push karo */
+.features-grid .feat-card:nth-child(2) h3 {
+  margin-top: 15px;
+}
+
+.features-grid .feat-card:nth-child(2) p {
+  margin-top: 8px;
+  font-size: 12px;padding: 0 15px;
+}
+
+.feat-card {
+     background: #faf9f9d3;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    text-align: left;
+    transition: all 0.3s ease;
+    align-items: center;
+}
+/* Card Styling for Better Look */
+
+
+ .feat-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.feat-card p {
+    font-size: 14px;
+    color: var(--text-grey);
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 15%;
+} 
+
+.feat-card:hover {
+  /* background: #f8efef;  */
+  border: 2px solid #E63946;
+  box-shadow: #db8990;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.15);
+}
+
+/* Optional: text bhi thoda highlight */
+.feat-card:hover h3 {
+  color: #0f0f0f;
+}
+
+/* .card-img {
+    width: 100%;
+    height: 200px; 
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+} */
+.card-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user-avatars{
+  margin-top: 10px;
+  display:flex;
+  align-items:center;
+  
+}
+.user-avatars span{
+  margin-left:18px;   /* gap between last photo and text */
+  font-weight:600;
+  color: #34373A;
+}
+.user-avatars span h4{
+  font-size:35px;
+  color: var(--primary-red);
+
+}
+.user-avatars img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  border:2px solid #fff;
+  margin-left:-12px;  /* 🔥 overlap effect */
+  
+  
+}
+
+/* first image ka margin reset */
+.user-avatars img:first-child{
+  margin-left:0;
+}
+
+
+.platform-cta{
+  padding:100px 0;
+  display:flex;
+  justify-content:center;
+}
+
+.orbit-container{
+  position: relative;
+  width: min(90vw, 600px);
+  height: min(90vw, 600px);
+  margin: auto;
+}
+
+/* OUTER CIRCLE */
+.orbit-circle{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:1.5px dashed rgba(0,0,0,0.2);
+}
+
+/* INNER CIRCLE */
+.orbit-circle::after{
+  content:"";
+  position:absolute;
+  width:75%;
+  height:75%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  border-radius:50%;
+  border:1px dashed rgba(0,0,0,0.15);
+}
+
+/* CENTER TEXT */
+.orbit-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* 🔥 perfect center */
+
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+  z-index: 2;
+}
+
+.orbit-content h2{
+  font-size:34px;
+  line-height:1.2;
+}
+
+.orbit-content p{
+  color:#777;
+  margin-bottom:18px;
+}
+
+.orbit-content .btn-main{
+  padding: 12px 24px;   /* 🔥 smaller */
+  font-size: 14px;
+  border-radius: 30px;
+}
+/* ICONS */
+.orbit-icon{
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  width:65px;   /* 🔥 bigger */
+  height:65px;
+
+  border-radius:50%;
+  background:#fff;
+  padding:12px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+  transform: translate(-50%, -50%);
+}
+.i1 { transform: translate(-50%, -50%) rotate(0deg) translate(260px) rotate(0deg); }
+.i2 { transform: translate(-50%, -50%) rotate(60deg) translate(260px) rotate(-60deg); }
+.i3 { transform: translate(-50%, -50%) rotate(120deg) translate(260px) rotate(-120deg); }
+.i4 { transform: translate(-50%, -50%) rotate(180deg) translate(260px) rotate(-180deg); }
+.i5 { transform: translate(-50%, -50%) rotate(240deg) translate(260px) rotate(-240deg); }
+.i6 { transform: translate(-50%, -50%) rotate(300deg) translate(260px) rotate(-300deg); }
+
+.pricing {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section-sub{
+  color:#777;
+  margin-top:10px;
+}
+
+/* TOGGLE */
+.pricing-toggle {
+  position: relative;
+  width: 220px;
+  margin: 25px auto;
+  background: #eee;
+  border-radius: 30px;
+  display: flex;
+  padding: 5px;
+}
+
+.toggle-btn {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #e63946;
+  border-radius: 30px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.toggle-text {
+  flex: 1;
+  text-align: center;
+  z-index: 2;
+  cursor: pointer;
+  padding: 6px 0;
+  font-weight: 500;
+}
+
+.toggle-text.active {
+  color: white;
+}
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  margin-top:50px;
+  align-items:stretch; /* 🔥 important */
+}
+
+.price-card{
+    position: relative;
+  background:#f7f7f7;
+  border-radius:14px;
+  padding:25px;
+  display:flex;
+  flex-direction:column; /* 🔥 important */
+  justify-content:space-between; /* 🔥 button niche */
+}
+
+.price-card h4{
+  margin-top:15px;
+  font-size:15px;
+}
+
+.small{
+  color:#777;
+  font-size:13px;
+}
+
+/* PRICE */
+.price{
+  font-size:28px;
+  font-weight:700;
+  margin:10px 0;
+}
+
+.duration{
+  font-size:14px;   /* 🔥 small */
+  color:#777;
+  margin-left:5px;
+}
+.price .yearly {
+  display: none;
+}
+
+.features{
+  list-style:none;
+  padding-left:0;
+  margin-top:10px;
+}
+
+.features li{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  margin:6px 0;
+  text-align:left;   /* 🔥 fix */
+}
+.features li{
+  color:#333;
+}
+
+.features li::before{
+  content:"✔";
+  color:#e63946;
+  font-weight:bold;
+}
+
+.features li.cross::before{
+  content:"✖";
+  color:#aaa;
+}
+/* BUTTONS */
+.btn-outline{
+  width:100%;
+  padding:10px;
+  border:1px solid #e63946;
+  background:#fff;
+  color:#e63946;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.price-card:hover .btn-outline{
+  background:#e63946;
+  color:#fff;
+}
+
+/* selected card */
+.price-card.active .btn-outline{
+  background:#e63946;
+  color:#fff;
+}
+.save-tag{
+  display:none;
+  background:#000;
+  color:#fff;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  width:max-content;
+  margin:10px auto;
+}
+
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  background: #00a86b;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+.platform-reach {
+  background: linear-gradient(135deg, #FF5F6D, #E63946);
+  color: white;
+
+  padding: 70px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 30px;
+
+  max-width: 1100px;   /* 🔥 width control */
+  margin: 80px auto;   /* 🔥 center me laane ke liye */
+  overflow: hidden;
+}
+
+.reach-content { flex: 1;  max-width: 500px;}
+.reach-content h2 { font-size: 38px; margin: 20px 0; line-height: 1.2; }
+.reach-content .tag { font-size: 14px; opacity: 0.8; }
+
+.stats-grid { display: flex; gap: 40px; margin-top: 40px; }
+.stat h3 { font-size: 32px; font-weight: 700; }
+.stat p { font-size: 14px; opacity: 0.9; }
+.reach-image {
+  flex: 1;
+  position: relative;
+  height: 400px;   /* 🔥 ye add karo (image ko boundary milegi) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reach-image img {
+  width: 380px;   /* 🔥 thoda bada */
+  height: auto;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* first image */
+.reach-image img:first-child {
+  top: 20px;        /* 🔥 upar thoda gap */
+  right: 60px;
+  z-index: 2;
+}
+
+/* second image (peeche wali) */
+.reach-image img:last-child {
+  top: 100px;       /* 🔥 neeche shift */
+  right: 0%;
+  opacity: 0.9;
+}
+.key-benefits {
+  padding: 80px 60px;
+  text-align: center;
+  background: #fff;
+
+  max-width: 1100px;   /* 🔥 width control */
+  margin: 80px auto;   /* 🔥 center */
+}
+
+.benefits-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;   /* thoda balanced spacing */
+  margin-top: 50px;
+}
+
+.benefit-column { flex: 1; display: flex;  max-width: 280px; flex-direction: column; gap: 40px; }
+
+.benefit-card {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.benefit-card h4 { margin: 10px 0 5px; font-size: 18px; }
+.benefit-card p { font-size: 14px; color: #777; }
+
+.phone-display img {
+  width: 100%;
+  max-width: 320px;
+
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 5%, transparent 100%);
+}
+
+/* Container for the entire dark section */
+.dark-footer-wrapper {
+    background-color: #0d1117; /* Dark navy-blue background like image */
+    color: #ffffff;
+    padding-top: 1px; /* To prevent margin collapsing */
+}
+
+/* Centered content container with controlled width */
+.footer-inner-container {
+    max-width: 1200px; /* Adjust this value to make the whole section less spread */
+    margin: 0 auto;
+    position: relative; /* Essential for floating the card */
+    padding: 0 4%; /* Some side padding for mobile */
+}
+
+/* FLOATING PARTNER CARD */
+.partner-cta-card {
+    background: #ffffff;
+    color: #000;
+    width: 80%; /* Card width within the container */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%); /* Half out of the footer */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Soft shadow */
+    position: relative;
+    z-index: 10;
+}
+
+.partner-cta-text h2 { font-size: 26px; font-weight: 700; margin-bottom: 5px; }
+.partner-cta-text p { color: #666; font-size: 14px; line-height: 1.5; }
+
+.partner-cta-form { display: flex; gap: 10px; flex: 1; justify-content: flex-end; }
+.partner-cta-form input {
+    padding: 14px 20px;
+    border-radius: 50px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    width: 240px;
+    font-size: 14px;
+}
+
+.btn-connect {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-connect:hover {
+    background: #dc2626;
+}
+
+/* MAIN FOOTER GRID */
+.main-footer { padding: 40px 0 20px 0; margin-top: -30px; /* Offset for card's transform */ }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 { margin-bottom: 20px; font-size: 17px; color: #fff; font-weight: 600; }
+.footer-col p, .footer-col li { font-size: 14px; color: #aaa; margin-bottom: 11px; line-height: 1.6; }
+.footer-col ul { list-style: none; }
+.footer-col a { color: #aaa; text-decoration: none; transition: 0.3s; }
+.footer-col a:hover { color: #ef4444; }
+
+/* Icons & Logo */
+.footer-logo { height: 42px; margin-bottom: 18px; }
+.mii-logo { height: 48px; margin-top: 18px; filter: brightness(0) invert(1); }
+
+.social-icons { display: flex; gap: 12px; margin: 18px 0; }
+.social-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #222; color: white;
+    font-size: 12px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    font-size: 13px;
+    color: #666;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.bottom-links a, .legal-links a { margin: 0 8px; color: #666; text-decoration: none; }
+.bottom-links a:hover, .legal-links a:hover { color: #aaa; }
+
+
+/* =========================================
+   DYNAMIC HERO THEMES (Figma Variations)
+   ========================================= */
+
+
+.theme-dark h1, .theme-dark p { color: #ffffff; }
+.theme-dark .badge { background: rgba(255,255,255,0.1); color: #ffffff; }
+
+/* 2. Red Gradient Theme */
+.hero.theme-red {
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        #ff2d2d 0%,
+        #ff3b3b 35%,
+        #ff5c5c 55%,
+        #ff8f8f 70%,
+        #ffd6d6 85%,
+        #ffffff 100%
+    );
+}
+.hero.theme-red::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:180px;   /* fade area smaller */
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0) 45%,   /* fade late start hoga */
+        rgba(255,255,255,0.4) 70%,
+        rgba(255,255,255,0.8) 85%,
+        rgba(255,255,255,1) 100%
+    );
+
+    z-index:1;
+}
+/* Content should stay above fade */
+.hero-content,
+.hero-image {
+    position: relative;
+    z-index: 2;
+}
+
+/* text white */
+.theme-red h1,
+.theme-red p {
+    color: white;
+}
+.theme-red h1, .theme-red p { color: #ffffff; }
+.theme-red .badge { background: rgba(255,255,255,0.2); color: #ffffff; }
+/* Override button for Red Theme so it pops */
+.theme-red .btn-main {
+    background-color: #ffffff;
+    color: #FF4B4B;
+}
+
+/* 3. Soft Pink Theme (Matching your --bg-pink) */
+.hero.theme-soft {
+    background-color: var(--bg-pink);
+}
+.hero.theme-soft #hero-img {
+  max-height: 80vh;   /* screen ke hisaab se */
+  width: auto;
+  object-fit: contain;
+}
+.theme-soft h1 { color: var(--text-dark); }
+.theme-soft p { color: var(--text-grey); }
+
+/* 4. Professional B2B Theme */
+.hero.theme-pro {
+    background-color: #1A1C1E;
+    
+}
+.hero.theme-pro .hero-image{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;   /* right side push */
+    align-items: flex-end;       /* bottom push */
+    height: 100%;
+}
+
+.hero.theme-pro #hero-img{
+    max-width: 850px;      /* aur bada */
+    width: 100%;
+    transform: scale(1.4);
+    object-fit: contain;
+    margin-right: -80px;   /* right edge touch */
+    margin-bottom: -40px;  /* bottom edge touch */
+}
+.theme-pro h1, .theme-pro p { color: #ffffff; }
+.theme-pro .badge { background: #34373A; color: #ffffff; }
+
+/* Transition for smooth "feel" if you ever animate them */
+.hero {
+    transition: background 0.4s ease, color 0.4s ease;
+}
